@@ -1,4 +1,4 @@
-This is a fork to add fuzzy search functionality to password-store.
+This is a fork/patch to add fuzzy search functionality to password-store.
 
 ![Screencast](out.gif)
 
