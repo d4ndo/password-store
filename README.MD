@@ -15,13 +15,13 @@ Select and install one of the recommended fuzzy search commands listed below:
 
 Recommended:
 
-- fzf (Written in Go)
+- fzf (Go)
   https://github.com/junegunn/fzf
-- pick (Written in C) (Press Ctrl + Return to select password)
+- pick (C) (Press Ctrl + Return to select password)
   https://github.com/thoughtbot/pick
-- icepick (Written in Rust) (Press Ctrl + Return to select password)
+- icepick (Rust) (Press Ctrl + Return to select password)
   https://github.com/felipesere/icepick
-- selecta (Written in Ruby) (Press Ctrl + Return to select password)
+- selecta (Ruby) (Press Ctrl + Return to select password)
   https://github.com/garybernhardt/selecta
 
 Clone this repository : 
