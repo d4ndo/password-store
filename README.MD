@@ -11,7 +11,7 @@ pass **<TAB>
 ```
 #Install:
 
-Select and install one of the recommended fuzzy search commands listed below:
+Choose one of the recommended fuzzy search commands listed below:
 
 Recommended:
 
