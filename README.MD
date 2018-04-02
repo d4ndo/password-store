@@ -23,6 +23,8 @@ Recommended:
   https://github.com/felipesere/icepick
 - selecta (Ruby) (Press Ctrl + Return to select password)
   https://github.com/garybernhardt/selecta
+- peco (Go)
+  https://github.com/peco/peco
 
 Clone this repository : 
 
