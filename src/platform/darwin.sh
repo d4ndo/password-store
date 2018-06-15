@@ -11,7 +11,7 @@ clip() {
 		local now="$(pbpaste | openssl base64)"
 		[[ $now != $(echo -n "$1" | openssl base64) ]] && before="$now"
 		echo "$before" | openssl base64 -d | pbcopy
-	) 2>/dev/null & disown
+	) >/dev/null 2>&1 & disown
 	echo "Copied $2 to clipboard. Will clear in $CLIP_TIME seconds."
 }
 
@@ -29,6 +29,18 @@ tmpdir() {
 	[[ -z $DARWIN_RAMDISK_DEV ]] && die "Error: could not create ramdisk."
 	newfs_hfs -M 700 "$DARWIN_RAMDISK_DEV" &>/dev/null || die "Error: could not create filesystem on ramdisk."
 	mount -t hfs -o noatime -o nobrowse "$DARWIN_RAMDISK_DEV" "$SECURE_TMPDIR" || die "Error: could not mount filesystem on ramdisk."
+}
+
+qrcode() {
+	if type imgcat >/dev/null 2>&1; then
+		echo -n "$1" | qrencode --size 10 -o - | imgcat
+	elif type gm >/dev/null 2>&1; then
+		echo -n "$1" | qrencode --size 10 -o - | gm display -title "pass: $2" -geometry +200+200 -
+	elif type display >/dev/null 2>&1; then
+		echo -n "$1" | qrencode --size 10 -o - | display -title "pass: $2" -geometry +200+200 -
+	else
+		echo -n "$1" | qrencode -t utf8
+	fi
 }
 
 GETOPT="$(brew --prefix gnu-getopt 2>/dev/null || { which port &>/dev/null && echo /opt/local; } || echo /usr/local)/bin/getopt"
