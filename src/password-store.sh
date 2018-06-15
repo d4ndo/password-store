@@ -656,10 +656,6 @@ cmd_extension_or_show() {
 	fi
 }
 
-<<<<<<< HEAD
-=======
-SYSTEM_EXTENSION_DIR=""
->>>>>>> refs/remotes/origin/master
 cmd_extension() {
 	check_sneaky_paths "$1"
 	local user_extension system_extension extension
